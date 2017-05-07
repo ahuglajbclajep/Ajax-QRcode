@@ -1,0 +1,9 @@
+### Gradle ###
+.gradle
+build
+
+### IntelliJ IDEA ###
+.idea
+
+### Payara-Micro ###
+derby.log

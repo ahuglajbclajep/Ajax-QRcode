@@ -1,0 +1,39 @@
+group 'ahuglajbclajep.sampapp.payara.micro'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories.mavenCentral()
+dependencies {
+    providedCompile 'fish.payara.extras:payara-micro:4.1.1.171.1'
+}
+
+war.setBaseName('ROOT')
+war.setVersion('')
+
+task run(type: Exec, dependsOn: war) {
+    commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath)
+}
+
+task uberJar(type: Exec, dependsOn: war) {
+    String uberJarPath = 'build/libs/' + rootProject.name + '.jar'
+    commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath, '--outputUberJar', uberJarPath)
+}
+
+def String getMicroPath() {
+    configurations.providedCompile.find { it.name =~ /payara-micro.*\.jar/ }.absolutePath
+}
+
+task uberZip(type: Zip, dependsOn: uberJar) {
+    from 'build/libs/hello-payara-micro.jar'
+    from 'src/launcher'
+}
+
+task zip(type: Exec) {
+    commandLine('git', 'archive', '-o', 'build/' + rootProject.name + '_src.zip', 'HEAD')
+    // This task will fail if the 'build' folder does not exist.
+}

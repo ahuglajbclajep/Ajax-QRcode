@@ -1,6 +1,12 @@
-document.getElementById("submit_button").addEventListener("click", ajax, false);
+document.getElementById("submit_button").addEventListener("click", submit, false);
 
-function ajax() {
+function submit() {
+    var text = document.getElementById("input_text").value;
+    ajax(text);
+    location.hash = text;
+}
+
+function ajax(text) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -10,8 +16,5 @@ function ajax() {
 
     xhr.open("POST", "ajax");
     xhr.responseType = "blob";
-
-    var text = document.getElementById("input_text").value;
     xhr.send(text);
-    location.hash = text;
 }

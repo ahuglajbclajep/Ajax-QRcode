@@ -1,4 +1,9 @@
 document.getElementById("submit_button").addEventListener("click", submit, false);
+var hash = location.hash.replace(/^#/, "");
+if (hash !== "") {
+    ajax(hash);
+    document.getElementById("input_text").value = hash;
+}
 
 function submit() {
     var text = document.getElementById("input_text").value;

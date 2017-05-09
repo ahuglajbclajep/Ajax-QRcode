@@ -1,6 +1,6 @@
 document.getElementById("submit_button").addEventListener("click", ajax, false);
 
-function ajax(event) {
+function ajax() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -10,5 +10,8 @@ function ajax(event) {
 
     xhr.open("POST", "ajax");
     xhr.responseType = "blob";
-    xhr.send(document.getElementById("input_text").value);
+
+    var text = document.getElementById("input_text").value;
+    xhr.send(text);
+    location.hash = text;
 }

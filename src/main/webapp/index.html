@@ -2,19 +2,13 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>payara-micro</title>
-        <script>
-            function ajax() {
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'ajax');
-                xhr.send(document.getElementById("contents").value);
-            }
-        </script>
+        <title>Ajax-QRcode</title>
     </head>
     <body>
-        <form>
+        <form id="form">
             <input type="text" id="contents" value="" required autofocus>
-            <input type="submit" id="submit" onclick="ajax()">
+            <input type="submit">
         </form>
+        <script src="js/ajax.js"></script>
     </body>
 </html>

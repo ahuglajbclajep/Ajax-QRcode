@@ -24,7 +24,8 @@ public class Ajax extends HttpServlet {
         res.setContentType("image/jpeg");
 
         try (OutputStream out = res.getOutputStream()) {
-            ImageIO.write(createQR(req.getReader().readLine()), "jpg", out);
+            System.out.println(req.getReader().readLine());
+            ImageIO.write(createQR("test"), "jpg", out);
         } catch (WriterException | IOException e) {
             res.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }

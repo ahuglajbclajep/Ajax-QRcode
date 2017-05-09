@@ -7,11 +7,14 @@
             function ajax() {
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', 'ajax');
-                xhr.send("test");
+                xhr.send(document.getElementById("contents").value);
             }
         </script>
     </head>
     <body>
-        <button onclick="ajax()">test</button>
+        <form>
+            <input type="text" id="contents" value="" required autofocus>
+            <input type="submit" id="submit" onclick="ajax()">
+        </form>
     </body>
 </html>

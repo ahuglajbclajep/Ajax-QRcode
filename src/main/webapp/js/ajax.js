@@ -7,38 +7,22 @@ if (hash !== "") {
 
 function submit() {
     var text = document.getElementById("input_text").value;
-    jAjax(text);
+    ajax(text);
     location.hash = text;
 }
 
 function ajax(text) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("qrcode_image").src = URL.createObjectURL(this.response);
-        }
-    };
-    xhr.responseType = "blob";
-
-    xhr.open("POST", "ajax");
-    xhr.send(text);
-}
-
-function jAjax(text) {
     $.ajax({
         url: "ajax",
         type: "POST",
         data: text,
         xhr: function () {
             var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("qrcode_image").src = URL.createObjectURL(this.response);
-                }
-            };
             xhr.responseType = "blob";
-
             return xhr;
         }
+    })
+    .done(function (response, textStatus, jqXHR) {
+        document.getElementById("qrcode_image").src = URL.createObjectURL(response);
     });
 }

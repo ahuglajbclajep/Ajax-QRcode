@@ -22,7 +22,10 @@ function ajax(text) {
             return xhr;
         }
     })
-    .done(function (response, textStatus, jqXHR) {
+    .done(function (response) {
         document.getElementById("qrcode_image").src = URL.createObjectURL(response);
+    })
+    .fail(function () {
+        alert("Connection failed.");
     });
 }

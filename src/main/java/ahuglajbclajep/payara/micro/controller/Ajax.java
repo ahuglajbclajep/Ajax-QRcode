@@ -20,6 +20,11 @@ import java.util.EnumMap;
 public class Ajax extends HttpServlet {
 
     @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse res) {
+        res.setStatus(HttpServletResponse.SC_NOT_FOUND);
+    }
+
+    @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) {
         res.setContentType("image/jpeg");
 

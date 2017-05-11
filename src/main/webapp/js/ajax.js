@@ -12,20 +12,12 @@ function submit() {
 }
 
 function ajax(text) {
-    $.ajax({
-        url: "ajax",
-        type: "POST",
-        data: text,
-        xhr: function () {
-            var xhr = new XMLHttpRequest();
-            xhr.responseType = "blob";
-            return xhr;
-        }
-    })
-    .done(function (response) {
-        $("#qrcode_image").attr("src", URL.createObjectURL(response));
-    })
-    .fail(function () {
-        alert("Connection failed.");
+    fetch("ajax", {
+        method: 'POST',
+        body: text
+    }).then(function(response) {
+        return response.blob();
+    }).then(function(blob) {
+        $("#qrcode_image").attr("src", URL.createObjectURL(blob));
     });
 }

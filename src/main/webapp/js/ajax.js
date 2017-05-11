@@ -15,9 +15,7 @@ function ajax(text) {
     fetch("ajax", {
         method: 'POST',
         body: text
-    }).then(function(response) {
-        return response.blob();
-    }).then(function(blob) {
-        $("#qrcode_image").attr("src", URL.createObjectURL(blob));
-    });
+    })
+    .then(response => response.blob())
+    .then(blob => $("#qrcode_image").attr("src", URL.createObjectURL(blob)));
 }

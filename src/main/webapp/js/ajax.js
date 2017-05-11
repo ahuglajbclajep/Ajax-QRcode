@@ -16,12 +16,8 @@ function ajax(text) {
         method: 'POST',
         body: text
     })
-    .then(response => {
-        if (response.ok) {
-            response.blob().then(blob => $("#qrcode_image").attr("src", URL.createObjectURL(blob)));
-        } else {
-            alert(response.status + " : " + response.statusText);
-        }
-    })
+    .then(response => response.ok ?
+        response.blob().then(blob => $("#qrcode_image").attr("src", URL.createObjectURL(blob))) :
+        alert(response.status + " : " + response.statusText))
     .catch(() => alert("Connection failed."));
 }

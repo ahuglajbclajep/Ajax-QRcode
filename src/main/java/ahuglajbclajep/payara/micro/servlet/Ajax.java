@@ -1,4 +1,4 @@
-package ahuglajbclajep.payara.micro.controller;
+package ahuglajbclajep.payara.micro.servlet;
 
 import ahuglajbclajep.payara.micro.model.QRCode;
 import com.google.zxing.WriterException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 
-@WebServlet("/ajax")
-public class Servlet extends HttpServlet {
+@WebServlet("/servlet/ajax")
+public class Ajax extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) {

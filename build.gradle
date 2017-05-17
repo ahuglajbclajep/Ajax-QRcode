@@ -11,7 +11,7 @@ repositories.mavenCentral()
 dependencies {
     providedCompile 'fish.payara.extras:payara-micro:4.1.1.171.1'
     providedCompile 'javax:javaee-api:7.0'
-    providedCompile 'com.google.zxing:javase:3.3.0'
+    compile 'com.google.zxing:javase:3.3.0'
 }
 
 

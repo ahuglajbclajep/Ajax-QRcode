@@ -17,7 +17,7 @@ import java.io.OutputStream;
 import java.util.EnumMap;
 
 @WebServlet("/ajax")
-public class Ajax extends HttpServlet {
+public class Servlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) {

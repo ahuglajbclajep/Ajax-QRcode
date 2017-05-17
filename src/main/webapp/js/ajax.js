@@ -13,7 +13,7 @@ function submit() {
 
 function ajax(text) {
     $.ajax({
-        url: "servlet/ajax",
+        url: "jaxrs/ajax",
         type: "POST",
         data: text,
         xhr: function () {

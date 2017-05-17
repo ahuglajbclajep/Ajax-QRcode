@@ -10,7 +10,7 @@ import java.util.EnumMap;
 
 public class QRCode {
 
-    public BufferedImage create(String contents) throws WriterException {
+    public static BufferedImage create(String contents) throws WriterException {
         // The width and height of the image are determined by first creating an image,
         // adding a margin (4*2 pixels), and comparing it with the specified length.
         final int SIZE = 200;

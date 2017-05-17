@@ -24,7 +24,7 @@ public class Servlet extends HttpServlet {
         res.setContentType("image/jpeg");
 
         try (OutputStream out = res.getOutputStream()) {
-            ImageIO.write(new QRCode().create(req.getReader().readLine()), "jpg", out);
+            ImageIO.write(QRCode.create(req.getReader().readLine()), "jpg", out);
         } catch (WriterException | IOException e) {
             res.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }

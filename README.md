@@ -1,5 +1,6 @@
 # Ajax-QRcode
 ## Description
+Examples of Ajax(Fetch) and JAX-RS.  
 This project is based on [hello-payara-micro](https://github.com/ahuglajbclajep/hello-payara-micro).
 
 ## Usage
@@ -22,8 +23,6 @@ firefox http://localhost:8080/my-project &
 ```
 
 ## Future Releases
-* use Ajax.
-* use JAX-RS.
 * use Bootstrap.
 
 ## License

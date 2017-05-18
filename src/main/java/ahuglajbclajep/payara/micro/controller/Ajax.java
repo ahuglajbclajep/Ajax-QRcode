@@ -1,4 +1,4 @@
-package ahuglajbclajep.payara.micro.jaxrs;
+package ahuglajbclajep.payara.micro.controller;
 
 import ahuglajbclajep.payara.micro.model.QRCode;
 import com.google.zxing.WriterException;

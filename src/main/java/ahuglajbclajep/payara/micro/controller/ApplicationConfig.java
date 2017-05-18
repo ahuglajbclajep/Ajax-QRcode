@@ -1,4 +1,4 @@
-package ahuglajbclajep.payara.micro.jaxrs;
+package ahuglajbclajep.payara.micro.controller;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

@@ -14,11 +14,13 @@
             <div class="jumbotron">
                 <h1>Ajax-QRcode</h1>
                 <p>Examples of Ajax(Fetch) and JAX-RS.</p>
-                <p><a class="btn btn-primary btn-lg" href="https://github.com/ahuglajbclajep/Ajax-QRcode" role="button">Git Hub</a></p>
+                <p><a class="btn btn-primary btn-lg" href="https://github.com/ahuglajbclajep/Ajax-QRcode" role="button">GitHub &raquo;</a></p>
             </div>
-            <div id="form">
-                <input type="text" value="" required autofocus id="input_text">
-                <input type="button" value="send" id="submit_button">
+            <div class="input-group" id="form">
+                <input type="text" value="" required autofocus class="form-control" placeholder="contents" id="input_text">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="submit_button">make</button>
+                </span>
             </div>
             <img src="" alt="QRcode" id="qrcode_image">
         </div>

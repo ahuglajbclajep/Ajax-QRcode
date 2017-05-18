@@ -10,7 +10,7 @@ targetCompatibility = 1.8
 repositories.mavenCentral()
 dependencies {
     providedCompile 'fish.payara.extras:payara-micro:4.1.1.171.1'
-    providedCompile 'javax:javaee-api:7.0'
+    providedCompile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
     compile 'com.google.zxing:javase:3.3.0'
 }
 

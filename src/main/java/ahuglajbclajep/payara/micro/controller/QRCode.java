@@ -12,12 +12,12 @@ import javax.ws.rs.core.Response;
 import java.awt.image.BufferedImage;
 import java.util.EnumMap;
 
-@Path("ajax")
-public class Ajax {
+@Path("/")
+public class QRCode {
 
     @POST
     @Produces("image/jpeg")
-    public Response HelloWorld(String body) {
+    public Response send(String body) {
         try {
             return Response.ok(create(body)).build();
         } catch (WriterException e) {

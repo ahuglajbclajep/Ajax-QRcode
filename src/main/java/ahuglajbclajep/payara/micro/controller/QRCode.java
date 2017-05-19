@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import java.awt.image.BufferedImage;
 import java.util.EnumMap;
+import java.util.Objects;
 
 @Path("/")
 public class QRCode {
@@ -18,6 +19,8 @@ public class QRCode {
     @POST
     @Produces("image/jpeg")
     public Response send(String body) {
+        if (Objects.equals(body, "")) return Response.status(Response.Status.BAD_REQUEST).build();
+
         try {
             return Response.ok(create(body)).build();
         } catch (WriterException e) {

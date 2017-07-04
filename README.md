@@ -22,8 +22,5 @@ Server stop command is `ctrl + c`.
 firefox http://localhost:8080/my-project &
 ```
 
-## Future Releases
-* use Bootstrap.
-
 ## License
 [Apache-2.0](LICENSE)
